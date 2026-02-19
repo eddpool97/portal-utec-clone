@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<base href="https://portal.utec.edu.sv/(S(oair23gujks2ucxt4vfkpktz))/login.aspx" />
+	<title>PORTAL UTEC</title>
+	<link href="css/images/favicon.png" rel="shortcut icon" />
+	<style type="text/css">.style2 {
+            width: 356px;
+        }
+
+        #ft {
+            position: absolute;
+            bottom: 0;
+            height: 40px;
+            margin-top: 40px;
+        }
+
+        .box2 {
+            position: fixed;
+            top: -100%;
+            left: 30%;
+            right: 30%;
+            background-color: #fff;
+            color: #7F7F7F;
+            padding: 20px;
+            border: 2px solid #ccc;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -khtml-border-radius: 20px;
+            -moz-box-shadow: 0 1px 5px #333;
+            -webkit-box-shadow: 0 1px 5px #333;
+            z-index: 101;
+            font-size: 15px;
+
+
+        }
+
+        .box2 h1 {
+            border-bottom: 1px dashed #7F7F7F;
+            margin: -20px -20px 0px -20px;
+            padding: 10px;
+            background-color: #FFEFEF;
+            color: #EF7777;
+            -moz-border-radius: 20px 20px 0px 0px;
+            -webkit-border-top-left-radius: 20px;
+            -webkit-border-top-right-radius: 20px;
+            -khtml-border-top-left-radius: 20px;
+            -khtml-border-top-right-radius: 20px;
+        }
+
+        a.boxclose {
+            float: right;
+            width: 26px;
+            height: 26px;
+            background: transparent url(images/cancel.png) repeat top left;
+            margin-top: -30px;
+            margin-right: -30px;
+            cursor: pointer;
+        }
+
+        .overlay {
+            background: transparent url(images/overlay.png) repeat top left;
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 100;
+        }
+
+        .auto-style2 {
+            position: absolute;
+            /*nos posicionamos en el centro del navegador*/
+            ;
+            top: 50%;
+            left: 48%;
+            /*determinamos una anchura*/
+            ;
+            width: 500px;
+            /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+            margin-left: -200px;
+            /*determinamos una altura*/
+            ;
+            height: 333px;
+            /*indicamos que el margen superior, es la mitad de la altura*/
+            margin-top: -150px;
+            border: 0px solid #808080;
+            padding: 5px;
+        }
+	</style>
+	<script type="text/javascript">
+        //  keeps track of the delete button for the row
+        //  that is going to be removed
+        var _source;
+        // keep track of the popup div
+        var _popup;
+
+        function showConfirm(source) {
+            this._source = source;
+            this._popup = $find('infopnl_ModalPopupExtender');
+
+            //  find the confirm ModalPopup and show it    
+            this._popup.show();
+        }
+
+        function okClick() {
+            //  find the confirm ModalPopup and hide it    
+            this._popup.hide();
+            //  use the cached button as the postback source
+            __doPostBack(this._source.name, '');
+        }
+
+        function cancelClick() {
+            this._popup = $find('infopnl_ModalPopupExtender');
+            //  find the confirm ModalPopup and hide it 
+            this._popup.hide();
+            //  clear the event source
+            this._source = null;
+            this._popup = null;
+        }
+    </script><script type="text/javascript" src="js/jquery-1.3.2.js"></script><script type="text/javascript">
+        $(function () {
+
+            $('#overlay').fadeIn('fast', function () {
+                $('#box').animate({ 'top': '40%' }, 500);
+            });
+
+            $('#boxclose').click(function () {
+                $('#box').animate({ 'top': '-200%' }, 500, function () {
+                    $('#overlay').fadeOut('fast');
+                });
+            });
+
+        });
+
+        function Excel() {
+            var workbook = XLSX.utils.book_new();
+            var worksheet_data = $("#gridData")[0];
+            if (worksheet_data == null) {
+                alert("No hay datos que mostrar.\nAsegurese de ingresar un rango de fechas correcto.")
+            }
+            else {
+                var worksheet = XLSX.utils.table_to_sheet(worksheet_data);
+                workbook.SheetNames.push("Test");
+                workbook.Sheets["Test"] = worksheet;
+                exportExcelFile(workbook);
+            }
+        }
+
+        function exportExcelFile(workbook) {
+            return XLSX.writeFile(workbook, "Desercion.xlsx");
+        }
+
+    </script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js" integrity="sha256-L4toVMmsT96M05qV0wZ09xLhJ247DfIdqkhCfBZYwYU=" crossorigin="anonymous"></script>
+	<link href="/WebResource.axd?d=9VCd0vOh1mxgujOp-vmxP83ZTgkoGKeVylbySWnTXUVg6DxSFGsl8MD5xjx81GgwkU9t7WNtHt25kwjmmeQmIosQ-EqcEsH0HE1U4WDbd-I1gvCjmVCKjCA8pHjdq7eYiANgzpZ56QuC7P3Wnmu223HX76yHhRPxUITYkUh_2PRb5vyAvWZauhofHumZVrsk0&amp;t=633398888860000000" rel="stylesheet" type="text/css" />
+</head>
+<body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1272.0" data-new-gr-c-s-loaded="14.1272.0">
+<form action="./login.aspx" id="form1" method="post"><input name="__original_url" type="hidden" value="https://portal.utec.edu.sv/(S(oair23gujks2ucxt4vfkpktz))/login.aspx./login.aspx" /> <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKMTg1OTAwNTM0MGRke7azoZE2I1smFo+ZNMQkEdXPAVQO1M9jS1yIdlbz5uI=" /> <script src="/ScriptResource.axd?d=vsvwXDAUugwvK0VxQfmTeE3VrddsgPQEVlR4RDess3FAn4TbIjxCUXGWhfDG3F3p_9-liG8UaExPR5uB2djJuT70_cHKq-y2DISb2jWnuRJzl_TN89yWOnlTsvoMwm9O4tjoQTDbvJzfhNJaUz4vTIjvzSTir0kNYzqEEdN5dbeon_E9BWTPEe8yZBprtplU0&amp;t=32e5dfca" type="text/javascript"></script> <script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script> <script src="/ScriptResource.axd?d=R8s-cfImPBP_GWX54VC6dYBmZgbS80EQP96stmoSKQq8kQrvY-ekgtrLWVC0Q-3VaW875zO6BZYSNxeEb57qy80Cz0FCiAb2tJk0Dg_u6AP3LEjcRnwDOZ6SWXOgDHutUScmV47pEehWupLjPX7IvwTq7hziYky0OExaC7vo71M1&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=RKHf91BBJjiifWAS-X1Hg-71138HavhiXXipcITNceO2qrijjL5hKgGhbzdUJfUx3DIMIGYNhjJTQqM7fXct8NhhpsmDYx9STm91uCIvFFNVwgirxzADAOkeDiBe25WbMca3UWnIck8hi_ITFT3zFDBK9BIGDFGrvscrWOw5PHg1&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=-KLcSbHISP-X-J3XQBTaq_6-QBJ-svvXf_P-xBMJvcKJJwVb0AxwzgDcjkO5LwCgQ8kjJNpz5efkWseoNfP9iF99BkavfBulpScC0348oo3vWefACmn3juVH1-fyZjLro-cg8c_GRVGKhFs5cQMRQyxqFpugT2_RmnG0HnWu6j01&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=dDh6hqIOQ9ECyJJW3sGIDXrskK_IM3YlErD2tKfx8Ckb_XIHKAtAk7l0UUpdZJNKWWfA2mpRK_4aSR2XHYIuDFow90w_RjrTF0d-58Qa9NxlgzYKHqdDviefk3hG1DmcJ9O9IQCw2vMM8n53ls69CT60V3JV_cv-ud9aJIRM6II1&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=fE_7brLl3KEymPkaVArA9uROM49dWBZiHaNuizNnNoIQOEkbKsJBSN4IpXJHwvM_z6EHpI4v4INHVgpWsuqHOy2c2MnYmi0sphvKyU9qvaEFIp_j4DNtxgyXuuKeXtspcIMGdMOqF-lLHecWVZiKF1aohg91m9v8sAs_BMvb1QE1&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=45gN8mHr9V_4VlsY01jAEv_i9X0cN4epH2qSW1QU9xCak0TiFdPN8Ry2wFwDQDvKM6a7WN3tWjWc1sn3tO_DlUm6InAi6yo8b0zbd123ACUgokynX0dxNDkegL9678uy4zxyYCHlmowA-xbtfGou0ptOLsWMBBxsfiv0o6L6Yjk1&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <script src="/ScriptResource.axd?d=c5jtt4FvL2ZPIAXOUfFrDn4I2M1yxIFdR3hCB21xgwA11NA7yCzOSb4dWapOhZ0Rgmgr2MSeMrG20JukzZAoyUuUQA3a5GFkOckwMB4XP779lyDdrC7d0iH6vuRbR1335Dn7W9SC7bqMeWjOETwbVUySGyZM9unZNr61DnCuXpbPPviSNayGeNMAzMdP9UHK0&amp;t=ffffffffc7a6ddb0" type="text/javascript"></script> <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="C2EE9ABB" /> <input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="/wEdAAeAmchbihwY2stlR9oFsTN/OVVqve//j5gefpMSPi656h40bvmFkhcsgeZD/rV+DLWoTx1TbCLp5Sn9NW9a+seJzc6y4RDZWl6NaR3P0h07f7DMnacgPr/ujTJNqAliScnlLoMDbnclv6VUBdSjVsnPC2+qTdZQGyKAHtIQrvhGd6jhSCavwWiQ89h6vYloc7M=" />
+<div>
+<center>
+<div class="horizontal"><img id="Image2" onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" src="img/nav.png" /></div>
+
+<table class="auto-style2">
+	<tbody>
+		<tr>
+			<td colspan="3"><img id="logoImg" onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" src="img/utec_logo1.png" /></td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:100px;"><img id="Image1" onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" src="img/user.png" /></td>
+			<td class="style2" colspan="2"><input id="RequiredFieldValidator14_ValidatorCalloutExtender_ClientState" name="RequiredFieldValidator14_ValidatorCalloutExtender_ClientState" type="hidden" /></td>
+		</tr>
+		<tr>
+			<td class="style2" colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="style2" colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="style2" colspan="2" style="text-align:left;"><input id="UsuarioTxt" name="UsuarioTxt" placeholder="Ej: 1709032009" type="text" /> <input id="ValidatorCalloutExtender2_ClientState" name="ValidatorCalloutExtender2_ClientState" type="hidden" /><br />
+			<input id="ContrasenaTxt" name="ContrasenaTxt" placeholder="Password" type="password" /> <input id="ValidatorCalloutExtender1_ClientState" name="ValidatorCalloutExtender1_ClientState" type="hidden" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:left; width:20%">&nbsp;</td>
+			<td style=" text-align:left;"><input class="w8-button grey" id="BtnEntrar" name="BtnEntrar" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;BtnEntrar&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type="submit" value="Ingresar" /></td>
+		</tr>
+		<tr>
+			<td colspan="3">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<!--  -->
+
+<center>
+<div class="horizontal2"><!-- <a style="color: yellow; font-weight: bold; font-family:Times New Roman; font-size:15px;"
+                    href="https://inscripcion.utec.edu.sv/" target="_blank">Preinscripción de asignaturas.</a>--><br />
+<br />
+<a href="https://consultas.utec.edu.sv/rescredenciales/TipoUsuario.aspx" style="color: #FFFFFF; font-weight: bold; font-family:Times New Roman; font-size:15px;" target="_blank">&iquest;OLVID&Oacute; SU CONTRASE&Ntilde;A?</a></div>
+</center>
+<!--  --></div>
+
+<div class="horizontal" id="ft">&nbsp;</div>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ValidatorCalloutBehavior, {"ClientStateFieldID":"RequiredFieldValidator14_ValidatorCalloutExtender_ClientState","closeImageUrl":"/WebResource.axd?d=ZFADXsUnKX0uvfWIODbLHnOu_jIo-95J3Ba4h1bhpDwnv3WklqEfJ_P0Z-HPJ2k7F-OTquIFyrqoaYaX78Glq_Tv9fFDM2q2sSr4gifb7pXEuZjFp0swzCTULfodGllLBJobL7zZL9s7GQtPcCIS_nGx7obZgITMb_KuIlE-sQU1\u0026t=633398888860000000","id":"RequiredFieldValidator14_ValidatorCalloutExtender","warningIconImageUrl":"/WebResource.axd?d=YFx9P7tEo5xzf6W1DTNo2KmVvAMTnPmjs2DSk3_YZxXE6ukejk2KPEOUBC43I9N7i5PTYl_uWhjT39Sk-iNEVMWWWi1NFzs7k8u2VWSJqw9eBH3-o6xn9xT2kuOnXh2gsQHHIP-2AZG1psr8ppP5jmVEv757ArqMYlctc2rUBbs1\u0026t=633398888860000000","width":"50px"}, null, null, $get("RequiredFieldValidator2"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ValidatorCalloutBehavior, {"ClientStateFieldID":"ValidatorCalloutExtender2_ClientState","closeImageUrl":"/WebResource.axd?d=ZFADXsUnKX0uvfWIODbLHnOu_jIo-95J3Ba4h1bhpDwnv3WklqEfJ_P0Z-HPJ2k7F-OTquIFyrqoaYaX78Glq_Tv9fFDM2q2sSr4gifb7pXEuZjFp0swzCTULfodGllLBJobL7zZL9s7GQtPcCIS_nGx7obZgITMb_KuIlE-sQU1\u0026t=633398888860000000","id":"ValidatorCalloutExtender2","warningIconImageUrl":"/WebResource.axd?d=YFx9P7tEo5xzf6W1DTNo2KmVvAMTnPmjs2DSk3_YZxXE6ukejk2KPEOUBC43I9N7i5PTYl_uWhjT39Sk-iNEVMWWWi1NFzs7k8u2VWSJqw9eBH3-o6xn9xT2kuOnXh2gsQHHIP-2AZG1psr8ppP5jmVEv757ArqMYlctc2rUBbs1\u0026t=633398888860000000","width":"50px"}, null, null, $get("RequiredFieldValidator1"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ValidatorCalloutBehavior, {"ClientStateFieldID":"ValidatorCalloutExtender1_ClientState","closeImageUrl":"/WebResource.axd?d=ZFADXsUnKX0uvfWIODbLHnOu_jIo-95J3Ba4h1bhpDwnv3WklqEfJ_P0Z-HPJ2k7F-OTquIFyrqoaYaX78Glq_Tv9fFDM2q2sSr4gifb7pXEuZjFp0swzCTULfodGllLBJobL7zZL9s7GQtPcCIS_nGx7obZgITMb_KuIlE-sQU1\u0026t=633398888860000000","id":"ValidatorCalloutExtender1","warningIconImageUrl":"/WebResource.axd?d=YFx9P7tEo5xzf6W1DTNo2KmVvAMTnPmjs2DSk3_YZxXE6ukejk2KPEOUBC43I9N7i5PTYl_uWhjT39Sk-iNEVMWWWi1NFzs7k8u2VWSJqw9eBH3-o6xn9xT2kuOnXh2gsQHHIP-2AZG1psr8ppP5jmVEv757ArqMYlctc2rUBbs1\u0026t=633398888860000000","width":"50px"}, null, null, $get("RequiredFieldValidator2"));
+});
+//]]>
+</script></form>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
