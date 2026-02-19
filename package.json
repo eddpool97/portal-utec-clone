@@ -1,0 +1,26 @@
+{
+  "name": "portal-utec-clone",
+  "version": "1.0.0",
+  "description": "Portal UTEC clone page",
+  "homepage": "https://github.com/eddpool97/portal-utec-clone#readme",
+  "bugs": {
+    "url": "https://github.com/eddpool97/portal-utec-clone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddpool97/portal-utec-clone.git"
+  },
+  "license": "ISC",
+  "author": "eddpool97",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
